@@ -2,8 +2,8 @@
 
 Topics: Github & Actions, Docker, Python, Bash, Buffer Overflows
 
-## Write up of our first exploit (25 Points)
-My exploit is the following:
+# Write up of our first exploit (25 Points)
+-My exploit is the following:
 --------------------------------------------------------------------------------
 import sys
 import struct
@@ -21,9 +21,9 @@ I concluded from the source code (the input path is 1024 bytes long) that the bu
 The return address was found using 'sudo dmesg' to inspect where the stack pointer was when the segfault occured. I then found (with trial and error) that 1000 bytes where sufficient to get me to the nop sled, leading to execution of my shellcode. I have tested this and it works in multiple instances.
 
 
-######################################################################################
+--------------------------------------------------------------------------------
 A successful invocation:
-######################################################################################
+--------------------------------------------------------------------------------
 
 ~/Documents/hack_intro/erg1/hw0-KStamoulis$ docker run --rm --privileged -v `pwd`/exploit.py:/exploit.py -it ethan42/ncompress:vulnerable
 To run a command as administrator (user "root"), use "sudo <command>".
@@ -41,4 +41,4 @@ root
 # exit
 ubuntu@0d9b8c1aa83d:~$ 
 
-######################################################################################
+--------------------------------------------------------------------------------
